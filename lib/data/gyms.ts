@@ -25,18 +25,28 @@ export const gyms: Gym[] = [
     bookingUrl: "#",
     prices: [
       {
-        title: "Single Entry",
+        title: "Adults",
         rows: [
-          { label: "Adult", price: "250 Kč" },
-          { label: "Student / Senior", price: "180 Kč" },
-          { label: "Child (under 15)", price: "120 Kč" },
+          { label: "Single entry", price: "250 Kč" },
+          { label: "Day pass", price: "350 Kč" },
+          { label: "10-entry pass", price: "2 200 Kč" },
+          { label: "20-entry pass", price: "4 000 Kč" },
         ],
       },
       {
-        title: "10-Entry Pass",
+        title: "Kids & Youth",
+        footnote: "Under 18 years",
         rows: [
-          { label: "Adult", price: "2 200 Kč" },
-          { label: "Student / Senior", price: "1 600 Kč" },
+          { label: "Single entry", price: "170 Kč" },
+          { label: "Day pass", price: "240 Kč" },
+          { label: "10-entry pass", price: "1 500 Kč" },
+        ],
+      },
+      {
+        title: "Annual Passes",
+        rows: [
+          { label: "Adult", price: "6 900 Kč" },
+          { label: "Youth (under 18)", price: "4 900 Kč" },
         ],
       },
     ],
@@ -66,11 +76,28 @@ export const gyms: Gym[] = [
     bookingUrl: "#",
     prices: [
       {
-        title: "Single Entry",
+        title: "Adults",
         rows: [
-          { label: "Adult", price: "250 Kč" },
-          { label: "Student / Senior", price: "180 Kč" },
-          { label: "Child (under 15)", price: "120 Kč" },
+          { label: "Single entry", price: "230 Kč" },
+          { label: "Day pass", price: "320 Kč" },
+          { label: "10-entry pass", price: "2 000 Kč" },
+          { label: "20-entry pass", price: "3 700 Kč" },
+        ],
+      },
+      {
+        title: "Kids & Youth",
+        footnote: "Under 18 years",
+        rows: [
+          { label: "Single entry", price: "160 Kč" },
+          { label: "Day pass", price: "220 Kč" },
+          { label: "10-entry pass", price: "1 400 Kč" },
+        ],
+      },
+      {
+        title: "Annual Passes",
+        rows: [
+          { label: "Adult", price: "6 500 Kč" },
+          { label: "Youth (under 18)", price: "4 600 Kč" },
         ],
       },
     ],
