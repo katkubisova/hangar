@@ -1,5 +1,4 @@
-import { ArticleCard } from "@/components/news/ArticleCard";
-import { ArticleFilter } from "@/components/news/ArticleFilter";
+import { NewsSection } from "@/components/news/NewsSection";
 import { articles } from "@/lib/data/articles";
 
 export default function NewsPage() {
@@ -19,19 +18,7 @@ export default function NewsPage() {
       </section>
 
       <div className="max-w-7xl mx-auto px-6 py-16">
-        {/* ── Filter ── */}
-        <div className="mb-10">
-          <ArticleFilter />
-        </div>
-
-        {/* ── Article grid ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {articles.map((article, i) => (
-            <ArticleCard key={i} article={article} />
-          ))}
-        </div>
-
-        {/* TODO: Empty state — show when no articles match the selected category filter */}
+        <NewsSection articles={articles} />
       </div>
     </>
   );

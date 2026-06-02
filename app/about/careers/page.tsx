@@ -1,22 +1,6 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { BenefitCard } from "@/components/about/BenefitCard";
+import { CareersPositions } from "@/components/about/CareersPositions";
 import { positions } from "@/lib/data/positions";
-
-const gymCityMap: Record<string, string> = {
-  brno: "Brno",
-  ostrava: "Ostrava",
-  praha: "Praha",
-  plzen: "Plzeň",
-  olomouc: "Olomouc",
-};
-
-const employmentLabels: Record<string, string> = {
-  "full-time": "Full-time",
-  "part-time": "Part-time",
-  contract: "Contract",
-};
 
 const benefits = [
   {
@@ -75,44 +59,7 @@ export default function CareersPage() {
       </section>
 
       {/* ── Open positions ── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-bold text-[#1A1A1A] mb-10">
-            Open positions
-          </h2>
-
-          <div className="border border-[#E5E5E5] rounded-lg overflow-hidden">
-            {openPositions.map((position) => (
-              <Link
-                key={position.title}
-                href="/about/careers/position-detail"
-                className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-5 py-4 border-b border-[#E5E5E5] last:border-0 hover:bg-[#F2F2F2] transition-colors"
-              >
-                <div className="flex flex-wrap items-center gap-2.5">
-                  <span className="font-medium text-sm text-[#1A1A1A]">
-                    {position.title}
-                  </span>
-                  <Badge
-                    variant="outline"
-                    className="border-[#6B6B6B] text-[#6B6B6B] text-[11px]"
-                  >
-                    {gymCityMap[position.gymSlug] ?? position.gymSlug}
-                  </Badge>
-                  <Badge variant="secondary" className="text-[11px]">
-                    {employmentLabels[position.employmentType]}
-                  </Badge>
-                </div>
-                <span className="flex items-center gap-1 text-xs text-[#6B6B6B] flex-shrink-0">
-                  View position
-                  <ArrowRight size={13} />
-                </span>
-              </Link>
-            ))}
-          </div>
-
-          {/* TODO: No open positions state — show when openPositions.length === 0 */}
-        </div>
-      </section>
+      <CareersPositions positions={openPositions} />
     </>
   );
 }
