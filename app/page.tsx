@@ -106,17 +106,9 @@ export default function HomePage() {
             <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">
               Hangar App — Coming soon
             </h2>
-            <p className="text-sm text-[#6B6B6B] mb-8">
+            <p className="text-sm text-[#6B6B6B]">
               {LOREM_SHORT}
             </p>
-            <div className="flex justify-center gap-4">
-              <div className="w-36 h-12 bg-[#D9D9D9] rounded flex items-center justify-center text-xs text-[#6B6B6B]">
-                App Store
-              </div>
-              <div className="w-36 h-12 bg-[#D9D9D9] rounded flex items-center justify-center text-xs text-[#6B6B6B]">
-                Google Play
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -148,8 +140,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── News Teaser ── */}
+      {/* ── Events Teaser ── */}
       <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">
+                Events &amp; Activities
+              </h2>
+              <p className="text-sm text-[#6B6B6B] mb-2">
+                Placeholder text line one lorem ipsum dolor sit amet.
+              </p>
+              <p className="text-sm text-[#6B6B6B] mb-8">
+                Second line consectetur adipiscing elit sed do eiusmod.
+              </p>
+              <Link href="/events" className={buttonVariants()}>
+                See what&apos;s on
+              </Link>
+            </div>
+            <div className="relative h-80 bg-[#D9D9D9] rounded-lg">
+              <span className="absolute top-3 left-3 text-xs text-[#6B6B6B]">
+                Events photo
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── News Teaser ── */}
+      <section className="py-20 bg-[#F2F2F2]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between mb-10">
             <h2 className="text-2xl font-bold text-[#1A1A1A]">News</h2>
