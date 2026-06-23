@@ -1,17 +1,13 @@
-"use client";
-
-import { useState } from "react";
-import { GymSelector } from "@/components/shared/GymSelector";
-import { ActivityCard } from "@/components/events/ActivityCard";
 import Link from "next/link";
+import { ActivityCard } from "@/components/events/ActivityCard";
 import { buttonVariants } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { gyms } from "@/lib/data/gyms";
 import { activityCategories } from "@/lib/data/activity-categories";
-import type { Gym } from "@/lib/types";
+
+const visibleGyms = gyms.filter((g) => g.status !== "hidden");
 
 export default function EventsPage() {
-  const [selectedGym, setSelectedGym] = useState<Gym>(gyms[0]);
-
   return (
     <>
       {/* ── Hero ── */}
@@ -29,8 +25,54 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* ── Activity Categories ── */}
+      {/* ── Book Activities ── */}
       <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-2xl font-bold text-[#1A1A1A] mb-10">
+            Book activities in
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {visibleGyms.map((gym) => {
+              const isOpen = gym.status === "open";
+              return (
+                <div
+                  key={gym.slug}
+                  className="flex flex-col gap-4 rounded-lg border border-[#E5E5E5] p-6"
+                >
+                  <div className="flex items-center justify-between">
+                    <p className="font-semibold text-[#1A1A1A]">
+                      Hangar {gym.name}
+                    </p>
+                    {!isOpen && (
+                      <Badge
+                        variant="outline"
+                        className="border-[#6B6B6B] text-[#6B6B6B] text-[10px]"
+                      >
+                        Coming soon
+                      </Badge>
+                    )}
+                  </div>
+                  {isOpen ? (
+                    <a
+                      href={gym.bookingUrl}
+                      className={buttonVariants({ variant: "outline", size: "sm" })}
+                    >
+                      Book activities
+                    </a>
+                  ) : (
+                    <span className="text-xs text-[#6B6B6B]">
+                      Activities not yet available at this location.
+                    </span>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Activity Categories ── */}
+      <section className="py-20 bg-[#F2F2F2]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl font-bold text-[#1A1A1A] mb-10">
             What&apos;s on at Hangar
@@ -54,28 +96,6 @@ export default function EventsPage() {
             <Link href="/hangar-challenge" className={buttonVariants({ variant: "outline" })}>
               How it works
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Book Now ── */}
-      <section className="py-20 bg-[#F2F2F2]">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-bold text-[#1A1A1A] mb-8">
-            Ready to book?
-          </h2>
-          <GymSelector
-            gyms={gyms}
-            selected={selectedGym}
-            onChange={setSelectedGym}
-          />
-          <div className="mt-8 flex flex-col gap-3 items-start">
-            <a href="#" className={buttonVariants({ size: "lg" })}>
-              Browse activities at {selectedGym.name}
-            </a>
-            <p className="text-xs text-[#6B6B6B]">
-              You&apos;ll be redirected to the Hangar booking platform.
-            </p>
           </div>
         </div>
       </section>
