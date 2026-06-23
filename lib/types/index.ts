@@ -25,6 +25,7 @@ export type Gym = {
   visitorRulesUrl?: string;
   cafeMenuUrl?: string;
   cafeMenuThumbnail?: string;
+  physio?: PhysioData;
   displayOrder: number;
 };
 
@@ -111,4 +112,24 @@ export type BenefitCard = {
   text: string;
   icon: string;
   displayOrder: number;
+};
+
+export type PhysioTherapist = {
+  name: string;
+  specialisation: string;
+  bio: string;
+};
+
+export type PhysioPriceRow = {
+  service: string;
+  duration: string;
+  price: string;
+};
+
+export type PhysioData = {
+  enabled: boolean;
+  intro: string;
+  team: PhysioTherapist[];
+  prices: PhysioPriceRow[];
+  bookingFormRecipient: string;
 };

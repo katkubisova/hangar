@@ -50,6 +50,23 @@ export const gyms: Gym[] = [
         ],
       },
     ],
+    physio: {
+      enabled: true,
+      intro: "At Hangar Brno, our physiotherapy service helps climbers recover faster and move better. Book your appointment by sending us a request below.",
+      team: [
+        {
+          name: "Jan Novák",
+          specialisation: "Sports physiotherapy & climbing injury rehab",
+          bio: "Jan has worked with climbers for over 8 years, specialising in shoulder, finger, and wrist injuries common in bouldering.",
+        },
+      ],
+      prices: [
+        { service: "Initial assessment", duration: "60 min", price: "1 200 Kč" },
+        { service: "Follow-up session", duration: "45 min", price: "900 Kč" },
+        { service: "Sports massage", duration: "60 min", price: "1 000 Kč" },
+      ],
+      bookingFormRecipient: "physio@hangarbrno.cz",
+    },
     displayOrder: 1,
   },
   {
@@ -101,6 +118,23 @@ export const gyms: Gym[] = [
         ],
       },
     ],
+    physio: {
+      enabled: true,
+      intro: "Our physio at Hangar Ostrava is available throughout the week. Send us a booking request below and we'll confirm your slot by email.",
+      team: [
+        {
+          name: "Petra Horáková",
+          specialisation: "Musculoskeletal physiotherapy",
+          bio: "Petra specialises in movement analysis and injury prevention for recreational and competitive climbers.",
+        },
+      ],
+      prices: [
+        { service: "Initial assessment", duration: "60 min", price: "1 100 Kč" },
+        { service: "Follow-up session", duration: "45 min", price: "850 Kč" },
+        { service: "Sports massage", duration: "60 min", price: "950 Kč" },
+      ],
+      bookingFormRecipient: "physio@hangarostrava.cz",
+    },
     displayOrder: 2,
   },
   {

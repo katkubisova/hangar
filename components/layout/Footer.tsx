@@ -5,6 +5,7 @@ const navLinks = [
   { href: "/visit", label: "Visit Us" },
   { href: "/events", label: "Events" },
   { href: "/cafe", label: "Cafe" },
+  { href: "/physio", label: "Physio" },
   { href: "/news", label: "News" },
   { href: "/about/team", label: "About" },
   { href: "/contact", label: "Contact" },
