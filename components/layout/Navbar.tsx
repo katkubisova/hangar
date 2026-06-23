@@ -28,6 +28,7 @@ const visitLinks = [
 const aboutLinks = [
   { href: "/about/team", label: "Our Team" },
   { href: "/about/careers", label: "Careers" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const mobileLinks = [
@@ -138,10 +139,6 @@ export function Navbar() {
           >
             E-shop
           </a>
-
-          <Link href="/contact" className={linkClass("/contact")}>
-            Contact
-          </Link>
 
           {/* Language switcher */}
           <div className="ml-6 pl-6 border-l border-[#E5E5E5] flex items-center gap-2 text-sm">
