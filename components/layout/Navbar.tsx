@@ -15,11 +15,14 @@ import {
 import { cn } from "@/lib/utils";
 
 const mainLinks = [
-  { href: "/visit", label: "Visit Us" },
   { href: "/events", label: "Events" },
+  { href: "/news", label: "News" },
+];
+
+const visitLinks = [
+  { href: "/visit", label: "Visit Us" },
   { href: "/cafe", label: "Cafe" },
   { href: "/physio", label: "Physio" },
-  { href: "/news", label: "News" },
 ];
 
 const aboutLinks = [
@@ -28,7 +31,11 @@ const aboutLinks = [
 ];
 
 const mobileLinks = [
-  ...mainLinks,
+  { href: "/visit", label: "Visit Us" },
+  { href: "/cafe", label: "Cafe" },
+  { href: "/physio", label: "Physio" },
+  { href: "/events", label: "Events" },
+  { href: "/news", label: "News" },
   { href: "/about/team", label: "Our Team" },
   { href: "/about/careers", label: "Careers" },
   { href: "/contact", label: "Contact" },
@@ -55,13 +62,45 @@ export function Navbar() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center">
+          <NavigationMenu>
+            <NavigationMenuList>
+              {/* Visit Us dropdown */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
+                  className={cn(
+                    "h-auto px-3 py-2 text-sm font-normal bg-transparent hover:bg-transparent data-popup-open:bg-transparent",
+                    isActive("/visit") || isActive("/cafe") || isActive("/physio")
+                      ? "text-[#1A1A1A] font-medium"
+                      : "text-[#6B6B6B] hover:text-[#1A1A1A]"
+                  )}
+                >
+                  Visit Us
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="w-44 py-1">
+                    {visitLinks.map((link) => (
+                      <li key={link.href}>
+                        <NavigationMenuLink
+                          href={link.href}
+                          className="block rounded px-3 py-2 text-sm text-[#1A1A1A] hover:bg-[#F2F2F2]"
+                        >
+                          {link.label}
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+
           {mainLinks.map((link) => (
             <Link key={link.href} href={link.href} className={linkClass(link.href)}>
               {link.label}
             </Link>
           ))}
 
-          {/* About dropdown via shadcn NavigationMenu */}
+          {/* About dropdown */}
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
