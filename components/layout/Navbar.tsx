@@ -90,9 +90,8 @@ export function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          {/* TODO: replace "#" with the real e-shop URL */}
           <a
-            href="#"
+            href="https://www.hangareshop.cz/"
             target="_blank"
             rel="noopener noreferrer"
             className="px-3 py-2 text-sm text-[#6B6B6B] hover:text-[#1A1A1A] transition-colors"
@@ -136,9 +135,8 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            {/* TODO: replace "#" with the real e-shop URL */}
             <a
-              href="#"
+              href="https://www.hangareshop.cz/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-[#1A1A1A] py-3 border-b border-[#F2F2F2] last:border-0"
