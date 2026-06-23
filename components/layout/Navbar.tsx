@@ -90,6 +90,16 @@ export function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
 
+          {/* TODO: replace "#" with the real e-shop URL */}
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-2 text-sm text-[#6B6B6B] hover:text-[#1A1A1A] transition-colors"
+          >
+            E-shop
+          </a>
+
           <Link href="/contact" className={linkClass("/contact")}>
             Contact
           </Link>
@@ -120,12 +130,22 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-[#1A1A1A] py-3 border-b border-[#F2F2F2] last:border-0"
+                className="text-sm text-[#1A1A1A] py-3 border-b border-[#F2F2F2]"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
+            {/* TODO: replace "#" with the real e-shop URL */}
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-[#1A1A1A] py-3 border-b border-[#F2F2F2] last:border-0"
+              onClick={() => setOpen(false)}
+            >
+              E-shop
+            </a>
             <div className="flex gap-3 text-sm pt-4 mt-2 border-t border-[#E5E5E5]">
               <button className="text-[#6B6B6B]">CZ</button>
               <span className="text-[#6B6B6B]">/</span>
