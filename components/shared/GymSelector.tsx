@@ -11,16 +11,18 @@ type GymSelectorProps = {
 };
 
 export function GymSelector({ gyms, selected, onChange }: GymSelectorProps) {
+  const visibleGyms = gyms.filter((g) => g.status !== "hidden");
+
   return (
     <Tabs
       value={selected.slug}
       onValueChange={(slug) => {
-        const gym = gyms.find((g) => g.slug === slug);
+        const gym = visibleGyms.find((g) => g.slug === slug);
         if (gym) onChange(gym);
       }}
     >
       <TabsList className="h-auto gap-2 bg-transparent p-0">
-        {gyms.map((gym) => {
+        {visibleGyms.map((gym) => {
           const isComingSoon = gym.status === "coming-soon";
           return (
             <TabsTrigger
