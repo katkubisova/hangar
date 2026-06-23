@@ -92,7 +92,7 @@ export default function HomePage() {
             Find your Hangar
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {gyms.map((gym) => (
+            {gyms.filter((g) => g.status !== "hidden").map((gym) => (
               <GymCard key={gym.id} gym={gym} />
             ))}
           </div>
