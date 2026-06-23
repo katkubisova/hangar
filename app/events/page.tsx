@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { GymSelector } from "@/components/shared/GymSelector";
 import { ActivityCard } from "@/components/events/ActivityCard";
+import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { gyms } from "@/lib/data/gyms";
 import { activityCategories } from "@/lib/data/activity-categories";
@@ -38,6 +39,21 @@ export default function EventsPage() {
             {activityCategories.map((category) => (
               <ActivityCard key={category.name} category={category} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Hangar Challenge ── */}
+      <section className="py-20 bg-[#1A1A1A]">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <div className="max-w-xl">
+            <h2 className="text-2xl font-bold text-white mb-4">Hangar Challenge</h2>
+            <p className="text-sm text-[#A0A0A0] leading-relaxed mb-8">
+              Our year-round bouldering challenge. Set goals, track progress, and push your limits at any pace.
+            </p>
+            <Link href="/hangar-challenge" className={buttonVariants({ variant: "outline" })}>
+              How it works
+            </Link>
           </div>
         </div>
       </section>
