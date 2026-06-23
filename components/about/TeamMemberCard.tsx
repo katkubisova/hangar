@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import type { TeamMember } from "@/lib/types";
 
 const gymCityMap: Record<string, string> = {
+  core: "All gyms",
   brno: "Brno",
   ostrava: "Ostrava",
   praha: "Praha",

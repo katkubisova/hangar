@@ -2,6 +2,23 @@ import type { TeamMember } from "@/lib/types";
 
 export const teamMembers: TeamMember[] = [
   {
+    name: "Adam Ondra",
+    photo: "",
+    position: "Co-founder & Brand Ambassador",
+    gymSlug: "core",
+    bio: "World-class climber and co-founder of HANGARGYMS. Adam's vision is to build the Czech Republic's premier climbing gym network and make the sport accessible to everyone.",
+    displayOrder: 1,
+  },
+  {
+    name: "Placeholder Name",
+    photo: "",
+    position: "Head of Operations",
+    gymSlug: "core",
+    bio: "Placeholder bio for the Head of Operations role. This position oversees strategic direction and day-to-day management across the entire Hangar network.",
+    email: "operations@hangargyms.cz",
+    displayOrder: 2,
+  },
+  {
     name: "Jan Novák",
     photo: "",
     position: "Head Coach",
