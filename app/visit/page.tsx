@@ -111,6 +111,25 @@ export default function VisitPage() {
 
             <Divider />
 
+            {/* Current Occupancy */}
+            <section>
+              <SectionTitle>Current Occupancy</SectionTitle>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-[#6B6B6B]">Current capacity</span>
+                  <span className="font-medium text-[#1A1A1A]">42%</span>
+                </div>
+                <div className="h-2 w-full rounded-full bg-[#E5E5E5] overflow-hidden">
+                  <div className="h-full w-[42%] rounded-full bg-[#1A1A1A]" />
+                </div>
+                <p className="text-xs text-[#6B6B6B]">
+                  Updated a few minutes ago · Live data will be connected in production.
+                </p>
+              </div>
+            </section>
+
+            <Divider />
+
             {/* Opening Hours */}
             <section>
               <SectionTitle>Opening Hours</SectionTitle>
@@ -173,6 +192,19 @@ export default function VisitPage() {
                   </AccordionItem>
                 ))}
               </Accordion>
+            </section>
+
+            <Divider />
+
+            {/* Book Ticket */}
+            <section>
+              <SectionTitle>Book a Ticket</SectionTitle>
+              <p className="text-sm text-[#6B6B6B] mb-6">
+                Reserve your spot online and skip the queue at reception.
+              </p>
+              <a href={selectedGym.bookingUrl} className={buttonVariants({ size: "lg" })}>
+                Book now
+              </a>
             </section>
 
             <Divider />
