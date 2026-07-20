@@ -54,7 +54,7 @@ export default function EventsPage() {
                   </div>
                   {isOpen ? (
                     <a
-                      href={gym.bookingUrl}
+                      href={gym.activitiesBookingUrl}
                       className={buttonVariants({ variant: "outline", size: "sm" })}
                     >
                       Book activities

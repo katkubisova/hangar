@@ -20,6 +20,7 @@ export type Gym = {
   directionsVideoUrl?: string;
   registrationUrl: string;
   bookingUrl: string;
+  activitiesBookingUrl: string;
   prices: PriceCategory[];
   consentFormUrl?: string;
   visitorRulesUrl?: string;

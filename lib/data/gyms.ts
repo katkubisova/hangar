@@ -21,8 +21,9 @@ export const gyms: Gym[] = [
     phone: "+420 111 222 333",
     mapEmbedUrl: "#",
     directionsText: "Take tram 1 to Placeholder Stop, then walk 5 minutes.",
-    registrationUrl: "#",
-    bookingUrl: "https://aktivity.hangarbrno.cz/",
+    registrationUrl: "https://rezervace.hangarbrno.cz/newRegistration?lang=en",
+    bookingUrl: "#",
+    activitiesBookingUrl: "https://aktivity.hangarbrno.cz/",
     prices: [
       {
         title: "Adults",
@@ -89,8 +90,9 @@ export const gyms: Gym[] = [
     phone: "+420 222 333 444",
     mapEmbedUrl: "#",
     directionsText: "Take bus 12 to Placeholder Stop, then walk 3 minutes.",
-    registrationUrl: "#",
-    bookingUrl: "https://aktivity.hangarostrava.cz/",
+    registrationUrl: "https://rezervace.hangarostrava.cz/newRegistration",
+    bookingUrl: "#",
+    activitiesBookingUrl: "https://aktivity.hangarostrava.cz/",
     prices: [
       {
         title: "Adults",
@@ -156,6 +158,7 @@ export const gyms: Gym[] = [
     directionsText: "",
     registrationUrl: "#",
     bookingUrl: "#",
+    activitiesBookingUrl: "#",
     prices: [],
     displayOrder: 3,
   },
@@ -178,6 +181,7 @@ export const gyms: Gym[] = [
     directionsText: "",
     registrationUrl: "#",
     bookingUrl: "#",
+    activitiesBookingUrl: "#",
     prices: [],
     displayOrder: 4,
   },
@@ -200,6 +204,7 @@ export const gyms: Gym[] = [
     directionsText: "",
     registrationUrl: "#",
     bookingUrl: "#",
+    activitiesBookingUrl: "#",
     prices: [],
     displayOrder: 5,
   },
