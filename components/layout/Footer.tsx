@@ -4,6 +4,7 @@ import { Globe, Share2, Link2 } from "lucide-react";
 const navLinks = [
   { href: "/visit", label: "Visit Us" },
   { href: "/events", label: "Events" },
+  { href: "/hangar-challenge", label: "Hangar Challenge" },
   { href: "/cafe", label: "Cafe" },
   { href: "/physio", label: "Physio" },
   { href: "/news", label: "News" },
