@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { FileDown } from "lucide-react";
 import { GymSelector } from "@/components/shared/GymSelector";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -64,8 +65,12 @@ function ComingSoonBlock({ gym }: { gym: Gym }) {
   );
 }
 
-export default function VisitPage() {
-  const [selectedGym, setSelectedGym] = useState<Gym>(gyms[0]);
+function VisitPageContent() {
+  const searchParams = useSearchParams();
+  const gymParam = searchParams.get("gym");
+  const initialGym =
+    gyms.find((g) => g.slug === gymParam && g.status !== "hidden") ?? gyms[0];
+  const [selectedGym, setSelectedGym] = useState<Gym>(initialGym);
   const isOpen = selectedGym.status === "open";
 
   return (
@@ -259,5 +264,13 @@ export default function VisitPage() {
         <ComingSoonBlock gym={selectedGym} />
       )}
     </>
+  );
+}
+
+export default function VisitPage() {
+  return (
+    <Suspense fallback={null}>
+      <VisitPageContent />
+    </Suspense>
   );
 }

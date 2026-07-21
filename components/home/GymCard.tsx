@@ -48,7 +48,7 @@ export function GymCard({ gym }: GymCardProps) {
 
         <div className="pt-1">
           <Link
-            href="/contact"
+            href={`/visit?gym=${gym.slug}`}
             className={buttonVariants({ variant: "outline", size: "sm" })}
           >
             Visit
