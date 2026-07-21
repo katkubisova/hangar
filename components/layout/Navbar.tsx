@@ -20,7 +20,7 @@ const mainLinks = [
 ];
 
 const visitLinks = [
-  { href: "/visit", label: "Visit Us" },
+  { href: "/visit", label: "Gym" },
   { href: "/cafe", label: "Cafe" },
   { href: "/physio", label: "Physio" },
 ];
@@ -32,7 +32,7 @@ const aboutLinks = [
 ];
 
 const mobileLinks = [
-  { href: "/visit", label: "Visit Us" },
+  { href: "/visit", label: "Gym" },
   { href: "/cafe", label: "Cafe" },
   { href: "/physio", label: "Physio" },
   { href: "/events", label: "Events" },
